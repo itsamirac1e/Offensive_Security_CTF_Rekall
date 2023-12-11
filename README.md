@@ -10,12 +10,19 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 
 <h2>Security Tools/Techniques & Utilities Used</h2>
 
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
+- <b>MSFconsole</b> 
+- <b>Metasploit</b>
+- <b>Nmap/Zenmap</b>
+- <b>Nessus</b>
+- <b>Metasploit</b>
+- <b>Mimikatz-Kiwi</b>
+- <b>Kali Linux</b>
+- <b>https://centralops.net/co/DomainDossier.aspx</b>
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
+- <b>Rekall Web Application</b>
+- <b>Azure Windows 10 VM</b>
 
 <h2>Program walk-through:</h2>
 
