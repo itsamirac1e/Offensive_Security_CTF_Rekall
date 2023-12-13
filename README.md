@@ -24,7 +24,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 - <b>Rekall Web Application</b>
 - <b>Azure Windows 10 VM</b>
 
-<h2>Program walk-through:</h2>
+<h2>Day 1: Web Application</h2>
 
 
 <!--
