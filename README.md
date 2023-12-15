@@ -55,7 +55,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 </ul>
 
 <p align="center">
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/LwhZ2iT.png" height="80%" width="80%" alt="Rekall Homepage"/>
 <br />
 </p>
 
