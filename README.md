@@ -97,24 +97,32 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Stored XSS</li>
+  <li>Data Exposure - HTTP Response Headers</li>
  <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+  <li>Viewed the HTTP response headers of the About-Rekall.php section of the web app revealing sensitive information as well as the fourth flag.</li>
+  <li>Command used: <i>curl -v http://192.168.14.35/About-Rekall.php</i></li>
+  <li>Suggested remediation: Implement proper access controls and server-side validation.</li>
  </ul>
  <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <img src="https://i.imgur.com/ovggOBe.png" height="80%" width="80%" alt="Flag 4"/>
  <br />
  </p>
-  <li>Stored XSS</li>
+ 
+  <li>Local File Inclusion (LFI)</li>
  <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+  <li>I uploaded a basic php script file into the first upload field on the memory-planner.php page. This revealed that this particular field is not configured to accept only image files which causes critical risk to the safety of the web app.</li>
+  <li>Affected Hosts: 192.168.13.45/memory-planner.php</li>
+  <li>Suggested remediation: File Upload Validation - Ensure that the only form of file that can be uploaded are files ending in .jpg or any other image related file.</li>
  </ul>
  <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <img src="https://i.imgur.com/4CIwRek.png" height="80%" width="80%" alt="Flag 5 - PHP Script"/>
  <br />
  </p>
+ <p align="center">
+ <img src="[https://i.imgur.com/4CIwRek.png](https://i.imgur.com/fYRKxHb.png)" height="80%" width="80%" alt="Flag 5"/>
+ <br />
+ </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
