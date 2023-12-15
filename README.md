@@ -123,6 +123,27 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
+  <li>Advanced LFI</li>
+ <ul>
+  <li>When probing the secondary upload field on the memory-planner page, pen testers from Team 10 LLC attempted uploading the same .php script file, renamed as “script.jpg.php.” This prompted a response from the web application to reveal sensitive data which can be further exploited.</li>
+  <li>Affected Hosts: 192.168.13.45/Memory-planner.php</li>
+  <li>Suggested remediation: File upload validation + Sanitization - Ensure only files with ‘.jpg’ format are accepted and the upload field is configured to sanitize the user input to prevent LFI attempts.</li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/q0IknYi.png" height="80%" width="80%" alt="Flag 6"/>
+ <br />
+ </p>
+ 
+  <li>Suspected SQL Injection Vulnerability</li>
+ <ul>
+  <li>When probing the user login fields, I discovered the login.php page is vulnerable to SQL injection attacks. I was unable to determine the proper command to input into the right field but was able to yield the following error message indicating a potential vulnerability:</li>
+  <li>Injection query used: <i>ok' or 1=1--</i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/sGB13B2.png" height="80%" width="80%" alt="Flag 7"/>
+ <br />
+ </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
@@ -132,6 +153,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
  <br />
  </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
@@ -141,6 +163,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
  <br />
  </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
@@ -150,6 +173,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
  <br />
  </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
@@ -159,24 +183,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
  <br />
  </p>
-  <li>Stored XSS</li>
- <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
- </ul>
- <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
- <br />
- </p>
-  <li>Stored XSS</li>
- <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
- </ul>
- <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
- <br />
- </p>
+ 
   <li>Stored XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
