@@ -37,7 +37,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  </ul>
 </ul>
 
-<h2>Day 1: Web Application</h2>
+<h2>Day 1: Probing Rekall's Web Application</h2>
 <h3>Setup:</h3>
 
 <ul>
@@ -58,6 +58,129 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 <img src="https://i.imgur.com/LwhZ2iT.png" height="80%" width="80%" alt="Rekall Homepage"/>
 <br />
 </p>
+
+<h3>Vulnerabilities Detected:</h3>
+<ol>
+ <li>Reflected XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+  <li>Affected Hosts: 192.168.14.35/Welcome.php</li>
+  <li>Suggested remediation: Implement input validation.</li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+ 
+ <li>Advanced Reflected XSS</li>
+ <ul>
+  <li>Successfully attempted another reflected XSS injection with modified payload in the form of masking the script tags: </li>
+  <li>Exploit script used: <i><SCRIPscriptT>alert("You've been hacked!");</SCRIPscriptT></i></li>
+  <li>Affected Hosts: 192.168.14.35/Memory-planner.php</li>
+  <li>Suggested remediation: Implement better input validation measures to restrict advanced scripting tags/scripting entries of any kind.</li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/KA4BKuu.png" height="80%" width="80%" alt="Flag 2"/>
+ <br />
+ </p>
+ 
+ <li>Stored XSS</li>
+ <ul>
+  <li>Performed XSS injection on comments.php page of totalrekall website to generate an alert.</li>
+  <li>Exploit script used: <i><script>alert(“hi there”);</script></i></li>
+  <li>Affected Hosts: 192.168.14.35/comments.php</li>
+  <li>Suggested remediation: Implement output encoding to properly prevent user-generated content from being interpreted as HTML or JavaScript code that might execute a malicious payload.</li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/csqW5uo.png" height="80%" width="80%" alt="Flag 3"/>
+ <br />
+ </p>
+ 
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+  <li>Stored XSS</li>
+ <ul>
+  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
+  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+ </ul>
+ <p align="center">
+ <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <br />
+ </p>
+</ol>
+
+
 
 
 
