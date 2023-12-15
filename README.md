@@ -144,53 +144,30 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Stored XSS</li>
+  <li>Data Exposure - Admin Credentials</li>
  <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+  <li>Used Chrome developer tools feature to view the HTML structure of the login.php webpage. Further analysis revealed sensitive information stored within <p> tags containing admin credentials ‘dougquaid:kuato’. Successfully logged into the admin login field with credentials and was able to view networking.php page.</li>
+  <li>Affected Hosts: 192.168.13.45/login.php</li>
+  <li>Suggested remediation: Immediately modify source code of totalrekall web page to remove <font> tags or remove content in between them.</li>
  </ul>
  <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <img src="https://i.imgur.com/JYboR8N.png" height="80%" width="80%" alt="Flag 8"/>
+ <br />
+ </p>
+  <p align="center">
+ <img src="https://i.imgur.com/yu0SfvO.png" height="80%" width="80%" alt="Flag 8"/>
  <br />
  </p>
  
-  <li>Stored XSS</li>
+  <li>Data Exposure: Directory Traversal Attack</li>
  <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
+  <li>I was able to use path traversal techniques on the disclaimer.php page to view the robots.txt file. With this, it was determined that the goodbot agent is allowed to access all parts of the website. The BadBot agent is not allowed to access any part of the website. The wildcard rule applied to all user agents not mentioned restricts access to certain directories and a particular souvenirs.php URL.
+</li>
+  <li>Affected Hosts: 192.168.13.45/disclaimer.php?page=robots.txt</li>
+  <li>Suggested remediation: Implement Access Controls immediately to restrict access to any other sensitive files and directories. In addition, ensure that only authorized users are allowed to view critical files like robots.txt</li>
  </ul>
  <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
- <br />
- </p>
- 
-  <li>Stored XSS</li>
- <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
- </ul>
- <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
- <br />
- </p>
- 
-  <li>Stored XSS</li>
- <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
- </ul>
- <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
- <br />
- </p>
- 
-  <li>Stored XSS</li>
- <ul>
-  <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
-  <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
- </ul>
- <p align="center">
- <img src="https://i.imgur.com/mw9qyzP.png" height="80%" width="80%" alt="Flag 1"/>
+ <img src="https://i.imgur.com/5IPTRTM.png" height="80%" width="80%" alt="Flag 1"/>
  <br />
  </p>
 </ol>
