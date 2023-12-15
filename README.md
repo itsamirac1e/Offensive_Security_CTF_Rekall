@@ -172,6 +172,27 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  </p>
 </ol>
 
+<h2>Day 2: Probing Rekall's Linux Servers</h2>
+<h3>Setup:</h3>
+
+<ul>
+ <li>Using a VM, I logged into Kali Linux with the following credentials:</li>
+ <ul>
+  <li>User: root</li>
+  <li>Password: kali</li>
+ </ul>
+ <li>In a terminal, and cd over to: /root/Documents/day_2 and ran the following commands:</li>
+ <ul>
+  <li><i>docker-compose pull</i></li>
+  <li><i>docker-compose up</i></li>
+ </ul>
+ <li>I then opened a browser in Firefox and accessed Nessus by navigating to: https://kali:8834/. Once I had everything set up, I then began using the hints provided by the TA's on how to uncover each flag one by one. Here are the following vulnerabilities (flags) I found during this portion of the lab:</li>
+</ul>
+
+<ol>
+ <li></li>
+</ol>
+
 
 
 
