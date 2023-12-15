@@ -119,7 +119,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  <p align="center">
- <img src="[https://i.imgur.com/4CIwRek.png](https://i.imgur.com/fYRKxHb.png)" height="80%" width="80%" alt="Flag 5"/>
+ <img src="https://i.imgur.com/fYRKxHb.png" height="80%" width="80%" alt="Flag 5"/>
  <br />
  </p>
  
