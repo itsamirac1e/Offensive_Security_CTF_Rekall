@@ -12,14 +12,22 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 
 <h2>Security Tools/Techniques & Utilities Used</h2>
 
-- <b>Kali Linux</b>
-- <b>MSFconsole</b> 
-- <b>Metasploit</b>
-- <b>Nmap/Zenmap</b>
-- <b>Nessus</b>
-- <b>Metasploit</b>
-- <b>Mimikatz-Kiwi</b>
-- <b>https://centralops.net/co/DomainDossier.aspx</b>
+<ul>
+ <li>Penetration testing methodology</li>
+ <li>MITRE framework</li>
+ <li>OSINT tools</li>
+ <li>Metasploit/Meterpreter</li>
+ <li>Vulnerability scanning with Nmap and Nessus</li>
+ <li>Burp Suite</li>
+</ul>
+
+</br>
+
+<ul>
+ <li>Conducted a penetration test against a mock organization following the PTES methodology and MITRE framework.</li>
+ <li>Found and exploited vulnerabilities on the organization’s web application and Linux and Windows hosts.</li>
+ <li>Summarized findings and recommended mitigations in a penetration testing summary report.</li>
+</ul>
 
 <h2>Environments Used </h2>
 
