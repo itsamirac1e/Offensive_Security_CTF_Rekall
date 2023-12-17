@@ -235,6 +235,49 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <img src="https://i.imgur.com/n16r8ru.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
  <br />
  </p>
+
+ <li>Vulnerability: Apacher Tomcat Bypass RCE (CVE-2017-12617)</li>
+ <ul>
+  <li>Description: I used metasploit exploit modules to demonstrate RCE vulnerability and drop into root session on remote host 192.168.13.10. I searched for exploits that had Tomcat and JSP. I then used the exploit module <i>multi/http/tomcat_jsp_upload_bypass</i>, and set the RHOST to 192.168.13.10. After getting a Meterpreter shell, I then dropped into a system shell to get to the command line.</li>
+  <li>Affected Hosts: 192.168.13.10 on port 80.</li>
+  <li>Suggested remediation: Apply a patch or update to Apache Tomcat installed on the remote host. In addition, consider implementing better network security measures to restrict access on vulnerable ports.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/n16r8ru.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: Shellshock</li>
+ <ul>
+  <li>Description: I ran MSFconsole and searched for exploits that had Shellshock. I then selected <i>exploit/multi/http/apache_mod_cgi_bash_env_exec</i> and the following options:</li>
+  <ul>
+   <li>target URI(The vulnerable webpage): /cgi-bin/shockme.cgi</li>
+   <li>RHOST: 192.168.13.11</li>
+   <li>To find the flag using this exploit, I ran the following command from a shell on the exploited machine: <i>cat /etc/sudoers</i></li>
+  </ul>
+  <li>Affected Hosts: 192.168.13.11</li>
+  <li>Suggested remediation: Update to the most current version of BASH and assess if any other interconnected systems are vulnerable to Shellshock.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/F1pjPBb.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: Struts</li>
+ <ul>
+  <li>Description: I used Nessus to determine RHOST 192.168.13.12 is vulnerable to Struts exploitation. I then used MSFconsole to use Struts exploit <i>multi/http/struts2_content_type_ognl</i> to establish a Meterpreter shell on the RHOST 192.168.13.12. With this, I was able to extract a special zip file containing sensitive information (Flag 9).</li>
+  <ul>
+   <li>target URI(The vulnerable webpage): /cgi-bin/shockme.cgi</li>
+   <li>RHOST: 192.168.13.11</li>
+   <li>To find the flag using this exploit, I ran the following command from a shell on the exploited machine: <i>cat /etc/sudoers</i></li>
+  </ul>
+  <li>Affected Hosts: 192.168.13.11</li>
+  <li>Suggested remediation: Update to the most current version of BASH and assess if any other interconnected systems are vulnerable to Shellshock.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/F1pjPBb.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
+ <br />
+ </p>
 </ol>
 
 
