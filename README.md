@@ -61,7 +61,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 
 <h3>Vulnerabilities Detected:</h3>
 <ol>
- <li>Reflected XSS</li>
+ <li>Vulnerability: Reflected XSS</li>
  <ul>
   <li>Probed the 'welcome.php' page of the Rekall web app by inserting a basic JavaScript alert payload into the "Put your name here" field.</li>
   <li>Exploit script used: <i><script>alert("You've been hacked!");</script></i></li>
@@ -73,7 +73,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
- <li>Advanced Reflected XSS</li>
+ <li>Vulnerability: Advanced Reflected XSS</li>
  <ul>
   <li>Successfully attempted another reflected XSS injection with modified payload in the form of masking the script tags: </li>
   <li>Exploit script used: <i><SCRIPscriptT>alert("You've been hacked!");</SCRIPscriptT></i></li>
@@ -85,7 +85,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
- <li>Stored XSS</li>
+ <li>Vulnerability: Stored XSS</li>
  <ul>
   <li>Performed XSS injection on comments.php page of totalrekall website to generate an alert.</li>
   <li>Exploit script used: <i><script>alert(“hi there”);</script></i></li>
@@ -97,7 +97,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Data Exposure - HTTP Response Headers</li>
+  <li>Vulnerability: Data Exposure - HTTP Response Headers</li>
  <ul>
   <li>Viewed the HTTP response headers of the About-Rekall.php section of the web app revealing sensitive information as well as the fourth flag.</li>
   <li>Command used: <i>curl -v http://192.168.14.35/About-Rekall.php</i></li>
@@ -108,7 +108,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Local File Inclusion (LFI)</li>
+  <li>Vulnerability: Local File Inclusion (LFI)</li>
  <ul>
   <li>I uploaded a basic php script file into the first upload field on the memory-planner.php page. This revealed that this particular field is not configured to accept only image files which causes critical risk to the safety of the web app.</li>
   <li>Affected Hosts: 192.168.13.45/memory-planner.php</li>
@@ -123,7 +123,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Advanced LFI</li>
+  <li>Vulnerability: Advanced LFI</li>
  <ul>
   <li>When probing the secondary upload field on the memory-planner page, pen testers from Team 10 LLC attempted uploading the same .php script file, renamed as “script.jpg.php.” This prompted a response from the web application to reveal sensitive data which can be further exploited.</li>
   <li>Affected Hosts: 192.168.13.45/Memory-planner.php</li>
@@ -134,7 +134,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Suspected SQL Injection Vulnerability</li>
+  <li>Vulnerability: Suspected SQL Injection</li>
  <ul>
   <li>When probing the user login fields, I discovered the login.php page is vulnerable to SQL injection attacks. I was unable to determine the proper command to input into the right field but was able to yield the following error message indicating a potential vulnerability:</li>
   <li>Injection query used: <i>ok' or 1=1--</i></li>
@@ -144,7 +144,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Data Exposure - Admin Credentials</li>
+  <li>Vulnerability: Data Exposure - Admin Credentials</li>
  <ul>
   <li>Used Chrome developer tools feature to view the HTML structure of the login.php webpage. Further analysis revealed sensitive information stored within <p> tags containing admin credentials ‘dougquaid:kuato’. Successfully logged into the admin login field with credentials and was able to view networking.php page.</li>
   <li>Affected Hosts: 192.168.13.45/login.php</li>
@@ -159,7 +159,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
  
-  <li>Data Exposure: Directory Traversal Attack</li>
+  <li>Vulnerability: Data Exposure - Directory Traversal Attack</li>
  <ul>
   <li>I was able to use path traversal techniques on the disclaimer.php page to view the robots.txt file. With this, it was determined that the goodbot agent is allowed to access all parts of the website. The BadBot agent is not allowed to access any part of the website. The wildcard rule applied to all user agents not mentioned restricts access to certain directories and a particular souvenirs.php URL.
 </li>
