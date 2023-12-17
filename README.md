@@ -236,17 +236,6 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <br />
  </p>
 
- <li>Vulnerability: Apacher Tomcat Bypass RCE (CVE-2017-12617)</li>
- <ul>
-  <li>Description: I used metasploit exploit modules to demonstrate RCE vulnerability and drop into root session on remote host 192.168.13.10. I searched for exploits that had Tomcat and JSP. I then used the exploit module <i>multi/http/tomcat_jsp_upload_bypass</i>, and set the RHOST to 192.168.13.10. After getting a Meterpreter shell, I then dropped into a system shell to get to the command line.</li>
-  <li>Affected Hosts: 192.168.13.10 on port 80.</li>
-  <li>Suggested remediation: Apply a patch or update to Apache Tomcat installed on the remote host. In addition, consider implementing better network security measures to restrict access on vulnerable ports.</li>
- </ul>
-  <p align="center">
- <img src="https://i.imgur.com/n16r8ru.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
- <br />
- </p>
-
  <li>Vulnerability: Shellshock</li>
  <ul>
   <li>Description: I ran MSFconsole and searched for exploits that had Shellshock. I then selected <i>exploit/multi/http/apache_mod_cgi_bash_env_exec</i> and the following options:</li>
