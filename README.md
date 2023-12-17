@@ -267,15 +267,37 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <ul>
   <li>Description: I used Nessus to determine RHOST 192.168.13.12 is vulnerable to Struts exploitation. I then used MSFconsole to use Struts exploit <i>multi/http/struts2_content_type_ognl</i> to establish a Meterpreter shell on the RHOST 192.168.13.12. With this, I was able to extract a special zip file containing sensitive information (Flag 9).</li>
   <ul>
-   <li>target URI(The vulnerable webpage): /cgi-bin/shockme.cgi</li>
-   <li>RHOST: 192.168.13.11</li>
-   <li>To find the flag using this exploit, I ran the following command from a shell on the exploited machine: <i>cat /etc/sudoers</i></li>
+   <li>Used Meterpreter to download the following file: /root/flagisinThisfile.7z</li>
+   <li>In my Kali machine, I unzipped the file with the following command: 7z x flagisinThisfile.7z</li>
+   <li>Used <i>cat</i> to view the flag file.</li>
   </ul>
-  <li>Affected Hosts: 192.168.13.11</li>
-  <li>Suggested remediation: Update to the most current version of BASH and assess if any other interconnected systems are vulnerable to Shellshock.</li>
+  <li>Affected Hosts: 192.168.13.12</li>
+  <li>Suggested remediation: Update Apache Struts depending on the version the host is using. In addition, consider implementing a Web Application Firewall to block malicious attempts to exploit Struts.</li>
  </ul>
   <p align="center">
- <img src="https://i.imgur.com/F1pjPBb.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
+ <img src="https://i.imgur.com/Gwehmf3.png" height="80%" width="80%" alt="Day 2 Flag 10"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: Drupal - CVE-2019-6340</li>
+ <ul>
+  <li>Description: I used MSFconsole to search for drupal exploits. Used the exploit <b>unix/webapp/drupal_restws_unserialize</b> to establish a meterpreter session in RHOST 192.168.13.13. Performed the <b>getuid</b> command and received <b>www-data</b> as the UID for that host.</li>
+  <li>Affected Hosts: 192.168.13.13</li>
+  <li>Suggested remediation: Update Drupal to the latest version that includes the latest security patches.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/34ly5kp.png" height="80%" width="80%" alt="Day 2 Flag 11 Drupal"/>
+ <br />
+ </p>
+
+  <li>Vulnerability: SUDO without password</li>
+ <ul>
+  <li>Description: I used password guessing techniques to SSH into RHOST 192.168.13.14 using information gathered in WHOIS records. Guessed password ‘alice’, successfully executed ssh into RHOST as alice and used sudo to extract sensitive data in root level directories.</li>
+  <li>Affected Hosts: 192.168.13.14</li>
+  <li>Suggested remediation: Update admin password to something more complex, and disable SSH on that port.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/UFOHsK1.png" height="80%" width="80%" alt="Day 2 Flag 12 Password Guessing"/>
  <br />
  </p>
 </ol>
