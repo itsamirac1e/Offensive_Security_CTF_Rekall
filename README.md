@@ -190,7 +190,51 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 </ul>
 
 <ol>
- <li></li>
+ <li>Vulnerability: Domain Registrar Data Exposure</li>
+ <ul>
+  <li>Exploit Method: I used the Domain Dossier tool on CentralOps.net to gather information about the domain ‘totalrekall.xyz.’ The team was able to view sensitive PII regarding Admin level credentials, phone numbers, email and mailing addresses, etc. This information was exposed by performing a domain WHOIS record search of the URL.
+  </li>
+  <li>Affected Hosts: totalrekall.xyz</li>
+  <li>Suggested remediation: Remove sensitive data from the associated server immediately. </li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/FqHhKar.png" height="80%" width="80%" alt="Day 2 Flag 1"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: DNS Record Exposure</li>
+ <ul>
+  <li>Exploit Method: I used the same Domain Dossier utility to view DNS records of totalrekall.xyz. This revealed sensitive information including IP addresses,subdomains, and email addresses associated with the URL.
+  </li>
+  <li>Affected Hosts: totalrekall.xyz</li>
+  <li>Suggested remediation: Remove any immediately sensitive information from the records and implement logging and monitoring mechanisms to scan for any unauthorized access attempts.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/IFhYKiw.png" height="80%" width="80%" alt="Day 2 Flag 2"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: Certificate Information Exposure</li>
+ <ul>
+  <li>Description: I used crt.sh tools to view certificate validity of totalrekall.xyz which revealed that there was no valid root/intermediate certificate.</li>
+  <li>Affected Hosts: totalrekall.xyz</li>
+  <li>Suggested remediation: Update the SSL certificate by contacting the Certificate Authority (CA) immediately.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/WllYyaV.png" height="80%" width="80%" alt="Day 2 Flag 3"/>
+ <br />
+ </p>
+
+ <li>Vulnerability: Apacher Tomcat Bypass RCE (CVE-2017-12617)</li>
+ <ul>
+  <li>Description: I used metasploit exploit modules to demonstrate RCE vulnerability and drop into root session on remote host 192.168.13.10. I searched for exploits that had Tomcat and JSP. I then used the exploit module <i>multi/http/tomcat_jsp_upload_bypass</i>, and set the RHOST to 192.168.13.10. After getting a Meterpreter shell, I then dropped into a system shell to get to the command line.</li>
+  <li>Affected Hosts: 192.168.13.10 on port 80.</li>
+  <li>Suggested remediation: Apply a patch or update to Apache Tomcat installed on the remote host. In addition, consider implementing better network security measures to restrict access on vulnerable ports.</li>
+ </ul>
+  <p align="center">
+ <img src="https://i.imgur.com/n16r8ru.png" height="80%" width="80%" alt="Day 2 Flag 7"/>
+ <br />
+ </p>
 </ol>
 
 
