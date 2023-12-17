@@ -301,7 +301,20 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  </p>
 </ol>
 
+<h2>Day 3: Probing Rekall's Windows Servers</h2>
+<h3>Vulnerabilities Found:</h3>
 
+<ol>
+ <li>Public Data Exposure - Github Repo</li>
+ <ul>
+  <li>Description: The clue for the first flag was to search for any public information pertaining to Rekall. I stumbled across a public github repository containing username and password hash on https://github.com/totalrekall/site/blob/main/xampp.users. I then pasted contents into a .txt file and used John the Ripper tool to crack the password hash, revealing Tanya4life as password for user Trivera.</li>
+  <li>Suggested remediation: Make the Github repository private or delete it entirely.</li>
+ </ul>
+ <p align="center">
+  <img src="https://i.imgur.com/UFOHsK1.png" height="80%" width="80%" alt="Day 2 Flag 12 Password Guessing"/>
+  <br />
+ </p>
+</ol>
 
 
 
