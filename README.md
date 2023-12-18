@@ -21,14 +21,6 @@ This project demonstrates the offensive security skills I learned in UT Austin's
  <li>Burp Suite</li>
 </ul>
 
-</br>
-
-<ul>
- <li>Conducted a penetration test against a mock organization following the PTES methodology and MITRE framework.</li>
- <li>Found and exploited vulnerabilities on the organization’s web application and Linux and Windows hosts.</li>
- <li>Summarized findings and recommended mitigations in a penetration testing summary report.</li>
-</ul>
-
 <h2>Environments Used </h2>
 
 - <b>Rekall Web Application</b>
@@ -305,7 +297,7 @@ This project demonstrates the offensive security skills I learned in UT Austin's
 <h3>Vulnerabilities Found:</h3>
 
 <ol>
- <li>Public Data Exposure - Github Repo</li>
+ <li>Vulnerability: Public Data Exposure - Github Repo</li>
  <ul>
   <li>Description: The clue for the first flag was to search for any public information pertaining to Rekall. I stumbled across a public github repository containing username and password hash on https://github.com/totalrekall/site/blob/main/xampp.users. I then pasted contents into a .txt file and used John the Ripper tool to crack the password hash, revealing Tanya4life as password for user Trivera.</li>
   <li>Suggested remediation: Make the Github repository private or delete it entirely.</li>
@@ -314,6 +306,58 @@ This project demonstrates the offensive security skills I learned in UT Austin's
   <img src="https://i.imgur.com/UFOHsK1.png" height="80%" width="80%" alt="Day 2 Flag 12 Password Guessing"/>
   <br />
  </p>
+
+ <li>Vulnerability: FTP Anonymous READ</li>
+ <ul>
+  <li>Description: I performed an Nmap scan on the Windows 10 machine in my hyper manager using the following command: <i>nmap -A 172.22.117.20</i>. It revealed that port 21 is open on the Windows 10 host and I then successfully connected to Windows host using <i>ftp 172.22.117.20</i>. I was able to log into FTP as anonymous and exfiltrated sensitive information (Flag 3, Day 3).</li>
+  <li>Affected Hosts: 172.22.117.20</li>
+  <li>Suggested remediation: Disable FTP for Windows 10 host.</li>
+ </ul>
+ <p align="center">
+  <img src="https://i.imgur.com/PgjD0Gu.png" height="80%" width="80%" alt="Day 3, Flag 3"/>
+  <br />
+ </p>
+
+ <li>Vulnerability: SL Mail Exploit</li>
+ <ul>
+  <li>Description: I used the Nmap scan of 172.22.117.20 to determine the SLMAIL service is open via POP3 protocol on port 110. I then used MSFconsole to search for the appropriate exploit: <i>windows/pop3/seattlelab_pass</i>. Afterwards, I loaded the exploit modules and configured the module options to create a meterpreter session on RHOST 172.22.117.20</li>
+  <li>Affected Hosts: 172.22.117.20</li>
+  <li>Suggested remediation: Disable unnecessary SLMAIL services and update to the latest version of SLMAIL for the server.</li>
+ </ul>
+ <p align="center">
+  <img src="https://i.imgur.com/GMgnxYm.png" height="80%" width="80%" alt="Day 3, SLMail"/>
+  <br />
+ </p>
+
+ <li>Vulnerability: SYSTEM Shell Access</li>
+ <ul>
+  <li>Description: I created a Meterpreter session after running SLMAIL exploit to drop into the SYSTEM shell on Windows 10 machine and view scheduled tasks. This exploit reveals that attackers have the potential to establish a backdoor and create scheduled tasks to exfiltrate sensitive data at certain times.
+</li>
+  <li>Affected Hosts: 172.22.117.20</li>
+  <li>Suggested remediation: Implement Least Privilege ensuring that all users and services only have read access and change login credentials frequently.</li>
+ </ul>
+ <p align="center">
+  <img src="https://i.imgur.com/EgMy0PN.png" height="80%" width="80%" alt="Day 3, SYSTEM Shell"/>
+  <br />
+ </p>
+
+ <li>Vulnerability: Credential Data Exposure</li>
+ <ul>
+  <li>Description: I loaded the kiwi extension to begin credential dumping on Windows 10 host. Using the command <i>las_dump_sam</i>, kiwi revealed user and password hash information. I then copied the username and hash into a .txt file and used John the Ripper to crack the hash in NT format.
+</li>
+  <li>Affected Hosts: 172.22.117.20</li>
+ </ul>
+ <p align="center">
+  <img src="https://i.imgur.com/kKaCJsr.png" height="80%" width="80%" alt="Day 3, Mimikatz/Kiwi"/>
+  <br />
+ </p>
+
+<h2>Summary:</h2>
+<ul>
+ <li>Conducted a penetration test against a mock organization following the PTES methodology and MITRE framework.</li>
+ <li>Found and exploited vulnerabilities on the organization’s web application and Linux and Windows hosts.</li>
+ <li>Summarized findings and recommended mitigations in a penetration testing summary report.</li>
+</ul>
 </ol>
 
 
